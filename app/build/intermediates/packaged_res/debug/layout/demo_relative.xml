@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    demo_relative.xml — RelativeLayout Demonstration
+    ============================================================================
+    RelativeLayout positions children relative to each other or to the parent
+    container.  No nesting is required — each child declares its position via
+    attributes like:
+      • android:layout_centerInParent
+      • android:layout_above / below
+      • android:layout_toRightOf / toLeftOf
+      • android:layout_alignParentTop / Bottom / Start / End
+
+    This demo places five colored boxes in different positions to illustrate
+    how relative positioning works.
+    ============================================================================
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- Title label -->
+    <TextView
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RelativeLayout Demo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#C62828"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ── CENTER BOX ─────────────────────────────────────────────────── -->
+    <!-- Positioned at the exact center of the parent using                -->
+    <!-- android:layout_centerInParent="true"                             -->
+    <TextView
+        android:id="@+id/rl_center"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="#FFCDD2"
+        android:gravity="center"
+        android:text="CENTER\n(centerInParent)"
+        android:textColor="#C62828"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+
+    <!-- ── TOP BOX ────────────────────────────────────────────────────── -->
+    <!-- Positioned ABOVE the center box using android:layout_above       -->
+    <!-- and horizontally centered with android:layout_centerHorizontal   -->
+    <TextView
+        android:id="@+id/rl_top"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/rl_center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:background="#C8E6C9"
+        android:gravity="center"
+        android:text="ABOVE\n(layout_above)"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+
+    <!-- ── BOTTOM BOX ─────────────────────────────────────────────────── -->
+    <!-- Positioned BELOW the center box using android:layout_below       -->
+    <TextView
+        android:id="@+id/rl_bottom"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/rl_center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="#BBDEFB"
+        android:gravity="center"
+        android:text="BELOW\n(layout_below)"
+        android:textColor="#1565C0"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+
+    <!-- ── LEFT BOX ───────────────────────────────────────────────────── -->
+    <!-- Positioned to the LEFT of the center box using toStartOf         -->
+    <!-- and vertically centered with the center box using                -->
+    <!-- android:layout_centerVertical="true"                             -->
+    <TextView
+        android:id="@+id/rl_left"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toStartOf="@id/rl_center"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:background="#FFF9C4"
+        android:gravity="center"
+        android:text="LEFT\n(toStartOf)"
+        android:textColor="#F9A825"
+        android:textStyle="bold"
+        android:textSize="11sp" />
+
+    <!-- ── RIGHT BOX ──────────────────────────────────────────────────── -->
+    <!-- Positioned to the RIGHT of the center box using toEndOf          -->
+    <TextView
+        android:id="@+id/rl_right"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toEndOf="@id/rl_center"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="RIGHT\n(toEndOf)"
+        android:textColor="#6A1B9A"
+        android:textStyle="bold"
+        android:textSize="11sp" />
+
+    <!-- ── TOP-LEFT CORNER ────────────────────────────────────────────── -->
+    <!-- Uses alignParentTop + alignParentStart to pin to the corner      -->
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/rl_title"
+        android:layout_alignParentStart="true"
+        android:background="#B2EBF2"
+        android:gravity="center"
+        android:text="Top-Start"
+        android:textColor="#00838F"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <!-- ── TOP-RIGHT CORNER ───────────────────────────────────────────── -->
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/rl_title"
+        android:layout_alignParentEnd="true"
+        android:background="#FFCCBC"
+        android:gravity="center"
+        android:text="Top-End"
+        android:textColor="#D84315"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <!-- ── BOTTOM-LEFT CORNER ─────────────────────────────────────────── -->
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#DCEDC8"
+        android:gravity="center"
+        android:text="Bot-Start"
+        android:textColor="#558B2F"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <!-- ── BOTTOM-RIGHT CORNER ────────────────────────────────────────── -->
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#D1C4E9"
+        android:gravity="center"
+        android:text="Bot-End"
+        android:textColor="#4527A0"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

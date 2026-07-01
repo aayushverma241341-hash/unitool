@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#212121">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#151515"
+        android:elevation="4dp"
+        app:title="Scientific Calculator"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- Display Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom|end"
+        android:padding="24dp"
+        android:background="@color/calc_display_bg">
+
+        <TextView
+            android:id="@+id/tv_expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#AAAAAA"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <!-- Keypad Grid (5 columns) -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:rowCount="5"
+        android:padding="8dp"
+        android:background="#1C1C1E"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignBounds">
+
+        <!-- Row 1 -->
+        <Button android:id="@+id/btn_sin" android:text="sin" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_cos" android:text="cos" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_tan" android:text="tan" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_clear" android:text="C" style="@style/SciCalcButton" app:backgroundTint="#FF3B30" />
+        <Button android:id="@+id/btn_divide" android:text="÷" style="@style/SciCalcButton" app:backgroundTint="#FF9500" />
+
+        <!-- Row 2 -->
+        <Button android:id="@+id/btn_log" android:text="log" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_7" android:text="7" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_8" android:text="8" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_9" android:text="9" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_multiply" android:text="×" style="@style/SciCalcButton" app:backgroundTint="#FF9500" />
+
+        <!-- Row 3 -->
+        <Button android:id="@+id/btn_ln" android:text="ln" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_4" android:text="4" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_5" android:text="5" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_6" android:text="6" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_subtract" android:text="−" style="@style/SciCalcButton" app:backgroundTint="#FF9500" />
+
+        <!-- Row 4 -->
+        <Button android:id="@+id/btn_sqrt" android:text="√" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_1" android:text="1" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_2" android:text="2" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_3" android:text="3" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_add" android:text="+" style="@style/SciCalcButton" app:backgroundTint="#FF9500" />
+
+        <!-- Row 5 -->
+        <Button android:id="@+id/btn_power" android:text="x^y" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_0" android:text="0" style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_decimal" android:text="." style="@style/SciCalcButton" app:backgroundTint="#555555" />
+        <Button android:id="@+id/btn_pi" android:text="π" style="@style/SciCalcButton" app:backgroundTint="#333333" />
+        <Button android:id="@+id/btn_equals" android:text="=" style="@style/SciCalcButton" app:backgroundTint="#FF9500" />
+
+    </GridLayout>
+
+</LinearLayout>

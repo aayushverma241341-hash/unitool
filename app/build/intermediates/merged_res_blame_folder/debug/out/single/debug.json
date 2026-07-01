@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_calc_button_bg.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\calc_button_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_database.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_database.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_store_hub.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_store_hub.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_scientific_calculator.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_scientific_calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_hello_world.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_hello_world.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_phone.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_lock.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_lock.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_checkout.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_checkout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_calc_operator_bg.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\calc_operator_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_order_history.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_order_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_contact_book.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_contact_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_store_welcome.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_store_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_internal_framework.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_internal_framework.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_demo_table.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\demo_table.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_product_detail.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_product_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_gradient_header.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\gradient_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_demo_constraint.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\demo_constraint.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_task_manager.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_task_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_demo_relative.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\demo_relative.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_toggle_button.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_toggle_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_order_tracking.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_order_tracking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_check_circle.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_check_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_lifecycle.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_lifecycle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_demo_linear.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\demo_linear.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_layout_demo.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_layout_demo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_linear_layout.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_linear_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_favorites.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_favorites.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\mipmap-hdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_spinner_background.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\spinner_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_basic_widget.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_basic_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_item_product.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\item_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_demo_frame.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\demo_frame.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_gradient_hello_world.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\gradient_hello_world.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_calc_special_bg.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\calc_special_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_gpa_tracker.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_gpa_tracker.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_item_cart.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\item_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_form.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_udemy_reg.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_udemy_reg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_calculator.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_ic_calendar.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\ic_calendar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_item_order.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\item_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\layout_activity_catalog.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\layout\\activity_catalog.xml"
+    },
+    {
+        "merged": "com.labjournal.androidlab.app-merged_res-32:/layout_activity_basic_widget.xml.flat",
+        "source": "com.labjournal.androidlab.app-main-34:/layout/activity_basic_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\mipmap-hdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-merged_res-32:\\drawable_lifecycle_indicator_bg.xml.flat",
+        "source": "C:\\Users\\Pariv\\.gradle\\daemon\\8.2\\com.labjournal.androidlab.app-main-34:\\drawable\\lifecycle_indicator_bg.xml"
+    }
+]

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    activity_database.xml — Exercise 12: Student Database (SQLite)
+    ============================================================================
+    This layout provides a full CRUD (Create, Read, Update, Delete) interface
+    for managing student records stored in an SQLite database.
+
+    Layout structure:
+        LinearLayout (root, vertical)
+          └─ Toolbar
+          └─ ScrollView
+               └─ LinearLayout
+                    ├─ CardView  →  Input Fields (Name, Roll No, Marks)
+                    ├─ CardView  →  Action Buttons (Add, Update, Delete)
+                    ├─ Button    →  View All Records
+                    ├─ Button    →  Delete All (outlined style)
+                    └─ CardView  →  Records Display Area
+
+    DESIGN NOTES:
+    • TextInputLayout wraps TextInputEditText to provide floating labels,
+      error messages, and character counters — a Material Design pattern.
+    • Buttons are arranged in a horizontal row for primary actions and
+      full-width for secondary actions.
+    • The records area at the bottom uses a ScrollView + TextView for
+      simple formatted text display of database contents.
+    ============================================================================
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".DatabaseActivity">
+
+    <!-- ================================================================
+         Toolbar — top app bar with title and back navigation
+         ================================================================ -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:title="Student Database (SQLite)"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- ================================================================
+         Main content — scrollable to handle small screens and keyboard
+         ================================================================ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ========================================================
+                 INPUT FIELDS CARD
+                 ========================================================
+                 Contains three TextInputLayout + TextInputEditText pairs
+                 for entering student data:
+                   • Student Name (text input)
+                   • Roll Number  (numeric input)
+                   • Marks        (decimal numeric input)
+
+                 TextInputLayout provides:
+                   - Floating label animation
+                   - Error message display (setError())
+                   - Helper text and character counters
+                 ======================================================== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Section title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📝  Student Information"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="16dp" />
+
+                    <!--
+                        Student Name Input
+                        ──────────────────
+                        TextInputLayout wraps the EditText to add a floating
+                        label. When the user taps, the hint floats up.
+                    -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Student Name"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_student_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--
+                        Roll Number Input
+                        ─────────────────
+                        inputType="number" restricts keyboard to digits only.
+                        Roll numbers are stored as TEXT in the database to
+                        preserve leading zeros (e.g., "001").
+                    -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Roll Number"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_roll_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--
+                        Marks Input
+                        ───────────
+                        inputType="numberDecimal" allows digits and a decimal
+                        point (e.g., 95.5). Stored as REAL in SQLite.
+                    -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Marks"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_marks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ========================================================
+                 PRIMARY ACTION BUTTONS
+                 ========================================================
+                 Three buttons arranged horizontally for main CRUD actions:
+                   • Add Record   — INSERT a new student
+                   • Update       — UPDATE existing student (by Roll No)
+                   • Delete       — DELETE a student (by Roll No)
+
+                 layout_weight distributes space equally among buttons.
+                 ======================================================== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <!-- Add Record — primary action, colored background -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_add"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="Add"
+                        android:textAllCaps="false"
+                        app:cornerRadius="8dp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconGravity="textStart" />
+
+                    <!-- Update — secondary action -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_update"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:text="Update"
+                        android:textAllCaps="false"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:cornerRadius="8dp" />
+
+                    <!-- Delete — destructive action -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_delete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="Delete"
+                        android:textAllCaps="false"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:cornerRadius="8dp"
+                        app:strokeColor="#F44336" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ========================================================
+                 SECONDARY ACTION BUTTONS
+                 ========================================================
+                 Full-width buttons for bulk operations:
+                   • View All Records — SELECT * query
+                   • Delete All       — Destructive bulk delete
+                 ======================================================== -->
+
+            <!-- View All Records — full width, tonal style -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="📋  View All Records"
+                android:textAllCaps="false"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:cornerRadius="8dp" />
+
+            <!-- Delete All — outlined with warning color, asks confirmation -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="🗑  Delete All Records"
+                android:textAllCaps="false"
+                android:textColor="#F44336"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:cornerRadius="8dp"
+                app:strokeColor="#F44336" />
+
+            <!-- ────────────────────────────────────────────────────────
+                 Divider
+                 ──────────────────────────────────────────────────────── -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="12dp" />
+
+            <!-- ========================================================
+                 RECORDS DISPLAY AREA
+                 ========================================================
+                 Shows all database records in a formatted text view.
+                 The TextView is inside a CardView for visual consistency.
+
+                 Format:  ID: 1 | Name: John | Roll: 101 | Marks: 95.5
+                 Each record is on a separate line.
+
+                 Note: For production apps, a RecyclerView with a proper
+                 Adapter would be more efficient. This uses a simple
+                 TextView approach for educational clarity.
+                 ======================================================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📂  Database Records"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardUseCompatPadding="true">
+
+                <!-- Nested ScrollView for the records area.
+                     nestedScrollingEnabled=true allows scrolling within
+                     the outer ScrollView. -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="300dp"
+                    android:nestedScrollingEnabled="true">
+
+                    <TextView
+                        android:id="@+id/tv_records"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="No records found. Tap 'Add' to create one."
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:lineSpacingExtra="6dp"
+                        android:fontFamily="monospace" />
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

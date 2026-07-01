@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_lifecycle.xml
+    ======================
+    Layout for the Activity Lifecycle Demo screen.
+
+    This screen visually demonstrates the Android Activity Lifecycle by showing
+    each lifecycle stage (onCreate → onStart → onResume → onPause → onStop → onDestroy)
+    as a vertical "diagram" with colored indicators. Each indicator starts grey and
+    turns green when the corresponding lifecycle method is triggered.
+
+    Structure:
+    1. Toolbar - top navigation bar with back button
+    2. Lifecycle Diagram - vertical list of lifecycle stages with arrow connectors
+    3. Lifecycle Log - scrollable text log showing timestamped lifecycle events
+    4. Action Buttons - buttons to trigger lifecycle transitions
+
+    Package: com.labjournal.androidlab
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA">
+
+    <!-- ======================================================
+         SECTION 1: Toolbar
+         Provides a consistent top app bar with back navigation.
+         ====================================================== -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/design_default_color_primary"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white"
+        app:title="Lifecycle Demo"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- ======================================================
+         SECTION 2: Main scrollable content area
+         Contains the lifecycle diagram and the event log.
+         We wrap everything in a ScrollView so it works on
+         smaller screens without clipping content.
+         ====================================================== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ============================================
+                 Title Text
+                 Describes what this screen demonstrates.
+                 ============================================ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Activity Lifecycle Demo"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Watch each lifecycle stage light up as it is called."
+                android:textSize="13sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ============================================
+                 LIFECYCLE DIAGRAM
+                 Each stage is a horizontal row containing:
+                   - A small colored indicator (status dot)
+                   - The lifecycle method name
+                 Stages are connected by arrow TextViews.
+                 ============================================ -->
+
+            <!-- A CardView wraps the diagram for visual grouping -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- === onCreate === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Status indicator: grey by default, green when triggered -->
+                        <TextView
+                            android:id="@+id/tv_oncreate"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onCreate()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                    <!-- Arrow connecting onCreate → onStart -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▼"
+                        android:textSize="18sp"
+                        android:textColor="#9E9E9E"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <!-- === onStart === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_onstart"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onStart()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                    <!-- Arrow connecting onStart → onResume -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▼"
+                        android:textSize="18sp"
+                        android:textColor="#9E9E9E"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <!-- === onResume === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_onresume"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onResume()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                    <!-- Arrow connecting onResume → onPause -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▼"
+                        android:textSize="18sp"
+                        android:textColor="#9E9E9E"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <!-- === onPause === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_onpause"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onPause()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                    <!-- Arrow connecting onPause → onStop -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▼"
+                        android:textSize="18sp"
+                        android:textColor="#9E9E9E"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <!-- === onStop === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_onstop"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onStop()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                    <!-- Arrow connecting onStop → onDestroy -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="▼"
+                        android:textSize="18sp"
+                        android:textColor="#9E9E9E"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <!-- === onDestroy === -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_ondestroy"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/lifecycle_indicator_bg"
+                            android:backgroundTint="#BDBDBD"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="onDestroy()"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#212121" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ============================================
+                 LIFECYCLE EVENT LOG
+                 A scrollable text area that records every
+                 lifecycle callback with a timestamp, giving
+                 students a real-time trace of the lifecycle.
+                 ============================================ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lifecycle Event Log:"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#424242"
+                android:layout_marginBottom="4dp" />
+
+            <ScrollView
+                android:id="@+id/sv_log"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/tv_lifecycle_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#37474F"
+                    android:fontFamily="monospace"
+                    android:lineSpacingExtra="4dp" />
+            </ScrollView>
+
+            <!-- ============================================
+                 ACTION BUTTONS
+                 These buttons allow the user to deliberately
+                 trigger lifecycle transitions:
+                 - "Finish Activity" → calls finish(), triggering
+                   onPause → onStop → onDestroy.
+                 - "Go to Hello World" → starts a new activity,
+                   triggering onPause → onStop on THIS activity.
+                 ============================================ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_finish"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Finish Activity"
+                    android:textAllCaps="false"
+                    android:layout_marginEnd="8dp"
+                    app:backgroundTint="#F44336"
+                    app:cornerRadius="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_go_hello"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Go to Hello World"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#2196F3"
+                    app:cornerRadius="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

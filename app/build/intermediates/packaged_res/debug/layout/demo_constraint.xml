@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    demo_constraint.xml — ConstraintLayout Demonstration
+    ============================================================================
+    ConstraintLayout is the most flexible and performant layout manager in
+    Android.  Each child must have at least one horizontal and one vertical
+    constraint, anchoring it to another view or the parent.
+
+    Key attributes demonstrated:
+      • app:layout_constraintTop_toTopOf          — anchor top edge
+      • app:layout_constraintStart_toStartOf      — anchor start (left) edge
+      • app:layout_constraintEnd_toEndOf           — anchor end (right) edge
+      • app:layout_constraintBottom_toBottomOf     — anchor bottom edge
+      • app:layout_constraintStart_toEndOf         — start anchored to sibling's end
+      • app:layout_constraintHorizontal_chainStyle — chain distribution
+      • app:layout_constraintVertical_bias         — vertical position bias (0–1)
+      • app:layout_constraintWidth_percent         — percentage-based width
+
+    ConstraintLayout achieves flat view hierarchies (no nesting) which
+    improves rendering performance.
+    ============================================================================
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- ── Title ──────────────────────────────────────────────────────── -->
+    <TextView
+        android:id="@+id/cl_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ConstraintLayout Demo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#00695C"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ── BOX A: Top-left, constrained to parent top & start ─────── -->
+    <TextView
+        android:id="@+id/cl_box_a"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#B2DFDB"
+        android:gravity="center"
+        android:text="Box A\n(Top-Start)"
+        android:textColor="#00695C"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintTop_toBottomOf="@id/cl_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- ── BOX B: Top-right, start constrained to end of Box A ────── -->
+    <TextView
+        android:id="@+id/cl_box_b"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#FFCCBC"
+        android:gravity="center"
+        android:text="Box B\n(start_toEndOf A)"
+        android:textColor="#BF360C"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintTop_toBottomOf="@id/cl_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- ── BOX C: Full width, below A and B ───────────────────────── -->
+    <TextView
+        android:id="@+id/cl_box_c"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#C5CAE9"
+        android:gravity="center"
+        android:text="Box C — Full Width (0dp + start/end constrained to parent)"
+        android:textColor="#283593"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/cl_box_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- ── CHAIN: Three boxes in a horizontal spread chain ────────── -->
+    <!-- Chains distribute space among linked views                    -->
+    <TextView
+        android:id="@+id/cl_chain1"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#FFF9C4"
+        android:gravity="center"
+        android:text="Chain 1"
+        android:textColor="#F57F17"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/cl_box_c"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cl_chain2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/cl_chain2"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#C8E6C9"
+        android:gravity="center"
+        android:text="Chain 2"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/cl_box_c"
+        app:layout_constraintStart_toEndOf="@id/cl_chain1"
+        app:layout_constraintEnd_toStartOf="@id/cl_chain3"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/cl_chain3"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#F8BBD0"
+        android:gravity="center"
+        android:text="Chain 3"
+        android:textColor="#AD1457"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/cl_box_c"
+        app:layout_constraintStart_toEndOf="@id/cl_chain2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Chain label -->
+    <TextView
+        android:id="@+id/cl_chain_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="↑ Horizontal Spread Chain ↑"
+        android:textSize="11sp"
+        android:textColor="#666666"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@id/cl_chain2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- ── BOX D: Centered with vertical bias ─────────────────────── -->
+    <!-- Bias of 0.85 pushes it towards the bottom (0=top, 1=bottom)  -->
+    <TextView
+        android:id="@+id/cl_box_d"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Box D — Centered with vertical bias (0.85)\nPushed towards bottom"
+        android:textColor="#6A1B9A"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/cl_chain_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.85"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

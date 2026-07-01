@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">UniToolkit</string>
+
+    <!-- Main Dashboard -->
+    <string name="dashboard_title">Lab Exercises</string>
+    <string name="dashboard_subtitle">Android Development Lab Journal</string>
+
+    <!-- Exercise Titles -->
+    <string name="ex5_title">Exercise 5</string>
+    <string name="ex5_desc">Activity Lifecycle</string>
+    <string name="ex6_title">Exercise 6</string>
+    <string name="ex6_desc">Hello World</string>
+    <string name="ex7_title">Exercise 7</string>
+    <string name="ex7_desc">Linear Layout</string>
+    <string name="ex8_title">Exercise 8</string>
+    <string name="ex8_desc">Form Inputs</string>
+    <string name="ex9_title">Exercise 9</string>
+    <string name="ex9_desc">Layout Types</string>
+    <string name="ex10_title">Exercise 10</string>
+    <string name="ex10_desc">Calculator</string>
+    <string name="ex11_title">Exercise 11</string>
+    <string name="ex11_desc">Toggle Button</string>
+    <string name="ex12_title">Exercise 12</string>
+    <string name="ex12_desc">Database</string>
+
+    <!-- Hello World -->
+    <string name="hello_message">Hello World!</string>
+    <string name="hello_subtitle">Welcome to Android Development</string>
+
+    <!-- Lifecycle -->
+    <string name="lifecycle_title">Activity Lifecycle Demo</string>
+    <string name="lifecycle_log_label">Lifecycle Events Log:</string>
+
+    <!-- Form -->
+    <string name="form_title">Registration Form</string>
+    <string name="hint_name">Enter Full Name</string>
+    <string name="hint_email">Enter Email Address</string>
+    <string name="hint_phone">Enter Phone Number</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="hint_dob">Select Date of Birth</string>
+    <string name="hint_address">Enter Address</string>
+    <string name="label_gender">Gender:</string>
+    <string name="label_hobbies">Hobbies:</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_reset">Reset</string>
+
+    <!-- Calculator -->
+    <string name="calc_title">Simple Calculator</string>
+
+    <!-- Toggle -->
+    <string name="toggle_title">Toggle Button Demo</string>
+
+    <!-- Database -->
+    <string name="db_title">Student Database</string>
+    <string name="hint_student_name">Student Name</string>
+    <string name="hint_student_roll">Roll Number</string>
+    <string name="hint_student_marks">Marks</string>
+    <string name="btn_add">Add Record</string>
+    <string name="btn_view">View All Records</string>
+    <string name="btn_delete_all">Delete All</string>
+</resources>

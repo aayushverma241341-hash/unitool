@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_linear_layout.xml
+    ==========================
+    Layout for the Linear Layout Demo screen (Exercise 7).
+
+    This screen demonstrates key LinearLayout concepts:
+      1. android:orientation — "vertical" stacks children top-to-bottom,
+         "horizontal" arranges them left-to-right.
+      2. android:layout_weight — distributes remaining space proportionally
+         among children. A weight of 1 on each child = equal distribution.
+      3. android:gravity — aligns a view's CONTENT within itself.
+      4. android:layout_gravity — positions a view within its PARENT.
+      5. Nesting — horizontal LinearLayouts inside a vertical one creates
+         a grid-like button bar without needing GridLayout.
+
+    Structure:
+    1. Toolbar — top navigation bar
+    2. Header — title text
+    3. ImageView — the target image that buttons manipulate
+    4. Button Row 1 — Change Color | Rotate | Scale (horizontal, weighted)
+    5. Button Row 2 — Reset | Info (horizontal, weighted)
+    6. Status bar — shows feedback about the last action
+
+    Package: com.labjournal.androidlab
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA">
+
+    <!-- ======================================================
+         SECTION 1: Toolbar
+         Consistent app bar with back navigation.
+         ====================================================== -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/design_default_color_primary"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white"
+        app:title="Linear Layout Demo"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- ======================================================
+         SECTION 2: Main content area
+         A vertical LinearLayout is the core of this exercise.
+         Everything is stacked top-to-bottom.
+         ====================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- ============================================
+             Header Text
+             android:gravity="center" centres the text
+             WITHIN the TextView itself.
+             ============================================ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Linear Layout Demo"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exercise 7 — Manipulate the image using the buttons below."
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ============================================
+             ImageView: The demo image
+             - Fixed 200dp × 200dp size
+             - Centered horizontally via layout_gravity
+             - Uses the default launcher icon as a placeholder
+             - Will be manipulated (colour, rotation, scale)
+               by the buttons below.
+             ============================================ -->
+        <ImageView
+            android:id="@+id/iv_demo_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:contentDescription="Demo image for LinearLayout exercise"
+            android:background="#E0E0E0"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- ============================================
+             BUTTON ROW 1 (horizontal LinearLayout)
+             Three buttons distributed equally using
+             android:layout_weight="1" on each button.
+
+             KEY CONCEPT: When layout_width="0dp" and
+             layout_weight="1", each button gets an
+             equal share of the remaining horizontal space.
+             ============================================ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <!-- Change Color button: cycles through preset colours -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_change_color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Change\nColor"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:layout_marginEnd="4dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#FF9800" />
+
+            <!-- Rotate button: rotates image by 45° each click -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_rotate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rotate\nImage"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#4CAF50" />
+
+            <!-- Scale button: toggles between 1.0× and 1.5× -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Scale\nImage"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#2196F3" />
+
+        </LinearLayout>
+
+        <!-- ============================================
+             BUTTON ROW 2 (horizontal LinearLayout)
+             Two buttons: Reset and Info, equally weighted.
+             ============================================ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Reset button: restores image to original state -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reset"
+                android:textAllCaps="false"
+                android:layout_marginEnd="4dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#F44336" />
+
+            <!-- Info button: shows an AlertDialog about LinearLayout -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Info"
+                android:textAllCaps="false"
+                android:layout_marginStart="4dp"
+                app:cornerRadius="8dp"
+                app:backgroundTint="#9C27B0" />
+
+        </LinearLayout>
+
+        <!-- ============================================
+             Status TextView
+             Displays feedback about the most recent action.
+             Uses a subtle background so it looks like a
+             status bar at the bottom of the screen.
+             ============================================ -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready. Tap a button to interact with the image."
+            android:textSize="14sp"
+            android:textColor="#37474F"
+            android:background="#E8F5E9"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_hello_world.xml - Exercise 6: Hello World
+    ===================================================
+    This layout demonstrates the classic "Hello World" Android screen.
+    It is the simplest exercise in the lab journal and serves as an
+    introduction to Android UI development.
+
+    Layout Structure:
+    - LinearLayout (root, vertical, with gradient background)
+      ├── Toolbar (with back navigation arrow)
+      ├── Center Content Area (takes remaining space via layout_weight)
+      │   ├── Android Robot Emoji (🤖) - large decorative element
+      │   ├── "Hello World!" - main heading (32sp, bold)
+      │   ├── "Welcome to Android Development" - subtitle
+      │   └── Decorative divider line
+      └── Footer Area
+          └── Exercise description text
+
+    KEY CONCEPTS:
+    - Toolbar: Replaces the older ActionBar; provides a customizable app bar
+    - layout_weight: Distributes remaining space proportionally among siblings
+    - gravity vs layout_gravity:
+        - gravity: Aligns content INSIDE the view
+        - layout_gravity: Aligns the view WITHIN its parent
+    - sp (scale-independent pixels): Used for text sizes; scales with user's
+      font size preference for accessibility
+    - dp (density-independent pixels): Used for dimensions; ensures consistent
+      physical size across different screen densities
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_hello_world"
+    tools:context=".HelloWorldActivity">
+
+    <!-- ============================================================
+         TOOLBAR - App Bar with Back Navigation
+         ============================================================
+         The Toolbar widget provides a flexible, customizable app bar.
+         It replaces the older ActionBar and can be placed anywhere
+         in the layout hierarchy.
+
+         Key attributes:
+         - elevation="4dp": Creates a subtle shadow beneath the toolbar
+         - theme: Uses the dark action bar theme for light-colored icons
+         - popupTheme: Ensures popup menus use the light theme
+         - The background is semi-transparent to blend with the gradient
+    -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_hello_world"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#44000000"
+        android:elevation="4dp"
+        app:title="Exercise 6: Hello World"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- ============================================================
+         CENTER CONTENT AREA
+         ============================================================
+         This LinearLayout occupies all remaining vertical space
+         (layout_weight="1" with height="0dp") and centers its content
+         both horizontally and vertically using gravity="center".
+
+         The 0dp height + weight=1 pattern is a standard Android technique:
+         - Setting height to 0dp tells Android not to measure intrinsic height
+         - Setting weight to 1 tells Android to give all remaining space to
+           this view after measuring siblings with fixed heights
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Large Android Robot Emoji
+             Displayed as text (no drawable needed). Using a large textSize
+             to create an eye-catching decorative element. Emojis are
+             rendered as colorful graphics on modern Android devices. -->
+        <TextView
+            android:id="@+id/tv_robot_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🤖"
+            android:textSize="80sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Main Heading: "Hello World!"
+             The classic first program output. Using:
+             - 32sp for large, prominent text
+             - Bold style for emphasis
+             - White color for contrast against the gradient background
+             - sans-serif-medium font family for a clean, modern look -->
+        <TextView
+            android:id="@+id/tv_hello_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Subtitle: Welcome message
+             A softer, smaller text below the main heading.
+             Semi-transparent white (#CCffffff) creates visual hierarchy
+             by making this text less prominent than the heading. -->
+        <TextView
+            android:id="@+id/tv_welcome_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Android Development"
+            android:textSize="18sp"
+            android:textColor="#CCFFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Decorative Divider Line
+             A thin horizontal line to visually separate the greeting
+             from any content below. Uses a semi-transparent white
+             background to maintain the light, airy aesthetic. -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="2dp"
+            android:background="#55FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Inspirational quote / additional context
+             Adds depth to the screen with a motivational message
+             that contextualizes the Hello World tradition. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Every great app starts\nwith a simple greeting."
+            android:textSize="14sp"
+            android:textColor="#99FFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+
+    <!-- ============================================================
+         FOOTER - Exercise Description
+         ============================================================
+         A bottom-anchored section that provides context about this
+         exercise. Uses a semi-transparent dark background to create
+         a "frosted glass" effect over the gradient.
+
+         This helps students understand which exercise they're viewing
+         and provides a brief summary of the learning objectives.
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#33000000"
+        android:padding="20dp"
+        android:gravity="center">
+
+        <!-- Exercise label badge -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📘 EXERCISE 6"
+            android:textSize="12sp"
+            android:textColor="#AAFFFFFF"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Exercise description explaining the purpose and learning outcome -->
+        <TextView
+            android:id="@+id/tv_exercise_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This exercise demonstrates the simplest Android application — displaying text on screen. It introduces the fundamental concepts of Activities, Layouts, and the Android project structure."
+            android:textSize="13sp"
+            android:textColor="#88FFFFFF"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

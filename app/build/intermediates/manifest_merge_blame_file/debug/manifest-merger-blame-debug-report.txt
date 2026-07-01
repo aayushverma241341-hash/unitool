@@ -1,0 +1,348 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.labjournal.androidlab"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+12        android:name="com.labjournal.androidlab.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.labjournal.androidlab.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:5:5-119:19
+18        android:allowBackup="true"
+18-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] C:\Users\Pariv\.gradle\caches\transforms-3\6b8f70eacaea457f2c8ec8c1d2a003d3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+20        android:debuggable="true"
+21        android:extractNativeLibs="false"
+22        android:icon="@mipmap/ic_launcher"
+22-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:7:9-43
+23        android:label="@string/app_name"
+23-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:8:9-41
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:9:9-54
+25        android:supportsRtl="true"
+25-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:10:9-35
+26        android:testOnly="true"
+27        android:theme="@style/Theme.AndroidLabJournal" >
+27-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:11:9-55
+28
+29        <!-- Exercise 6: Main Dashboard / Home Activity -->
+30        <activity
+30-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:14:9-22:20
+31            android:name="com.labjournal.androidlab.MainActivity"
+31-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:15:13-41
+32            android:exported="true"
+32-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:16:13-36
+33            android:label="@string/app_name" >
+33-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:17:13-45
+34            <intent-filter>
+34-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:18:13-21:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:19:17-69
+35-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:19:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:20:17-77
+37-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:20:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <!-- Exercise 6: Hello World Activity -->
+42        <activity
+42-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:25:9-28:58
+43            android:name="com.labjournal.androidlab.HelloWorldActivity"
+43-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:26:13-47
+44            android:label="Hello World"
+44-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:27:13-40
+45            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+45-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:28:13-55
+46
+47        <!-- Exercise 5: Lifecycle Demo Activity -->
+48        <activity
+48-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:31:9-34:58
+49            android:name="com.labjournal.androidlab.LifecycleActivity"
+49-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:32:13-46
+50            android:label="Lifecycle Demo"
+50-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:33:13-43
+51            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+51-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:34:13-55
+52
+53        <!-- Exercise 7: Linear Layout with Image and Buttons -->
+54        <activity
+54-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:37:9-40:58
+55            android:name="com.labjournal.androidlab.LinearLayoutActivity"
+55-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:38:13-49
+56            android:label="Linear Layout Demo"
+56-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:39:13-47
+57            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+57-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:40:13-55
+58
+59        <!-- Exercise 8: Form with Input Fields -->
+60        <activity
+60-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:43:9-46:58
+61            android:name="com.labjournal.androidlab.FormActivity"
+61-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:44:13-41
+62            android:label="Form Demo"
+62-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:45:13-38
+63            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+63-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:46:13-55
+64
+65        <!-- Exercise 9: Different Layouts Demo -->
+66        <activity
+66-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:49:9-52:58
+67            android:name="com.labjournal.androidlab.LayoutDemoActivity"
+67-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:50:13-47
+68            android:label="Layout Demo"
+68-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:51:13-40
+69            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+69-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:52:13-55
+70
+71        <!-- Exercise 10: Simple Calculator -->
+72        <activity
+72-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:55:9-58:58
+73            android:name="com.labjournal.androidlab.CalculatorActivity"
+73-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:56:13-47
+74            android:label="Calculator"
+74-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:57:13-39
+75            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+75-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:58:13-55
+76
+77        <!-- Exercise 11: Toggle Button -->
+78        <activity
+78-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:61:9-64:58
+79            android:name="com.labjournal.androidlab.ToggleButtonActivity"
+79-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:62:13-49
+80            android:label="Toggle Button Demo"
+80-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:63:13-47
+81            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+81-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:64:13-55
+82
+83        <!-- Exercise 12: Database Storage -->
+84        <activity
+84-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:67:9-70:58
+85            android:name="com.labjournal.androidlab.DatabaseActivity"
+85-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:68:13-45
+86            android:label="Database Demo"
+86-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:69:13-42
+87            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+87-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:70:13-55
+88
+89        <!-- Exercise 13: Udemy Registration Form -->
+90        <activity
+90-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:73:9-76:58
+91            android:name="com.labjournal.androidlab.UdemyRegActivity"
+91-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:74:13-45
+92            android:label="Udemy Registration"
+92-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:75:13-47
+93            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+93-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:76:13-55
+94
+95        <!-- Basic Widget Demo -->
+96        <activity
+96-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:79:9-82:58
+97            android:name="com.labjournal.androidlab.BasicWidgetActivity"
+97-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:80:13-48
+98            android:label="Basic Widgets"
+98-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:81:13-42
+99            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+99-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:82:13-55
+100
+101        <!-- Internal Framework -->
+102        <activity
+102-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:85:9-88:58
+103            android:name="com.labjournal.androidlab.InternalFrameworkActivity"
+103-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:86:13-54
+104            android:label="Internal Framework"
+104-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:87:13-47
+105            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+105-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:88:13-55
+106
+107        <!-- Final Projects -->
+108        <activity
+108-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:91:9-94:58
+109            android:name="com.labjournal.androidlab.TaskManagerActivity"
+109-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:92:13-48
+110            android:label="Task Manager"
+110-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:93:13-41
+111            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+111-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:94:13-55
+112        <activity
+112-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:95:9-98:58
+113            android:name="com.labjournal.androidlab.GpaTrackerActivity"
+113-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:96:13-47
+114            android:label="GPA Tracker"
+114-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:97:13-40
+115            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+115-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:98:13-55
+116        <activity
+116-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:99:9-102:58
+117            android:name="com.labjournal.androidlab.ContactBookActivity"
+117-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:100:13-48
+118            android:label="Contact Book"
+118-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:101:13-41
+119            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+119-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:102:13-55
+120        <activity
+120-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:103:9-106:58
+121            android:name="com.labjournal.androidlab.ScientificCalculatorActivity"
+121-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:104:13-57
+122            android:label="Scientific Calculator"
+122-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:105:13-50
+123            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+123-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:106:13-55
+124
+125        <!-- E-Commerce Modules -->
+126        <activity
+126-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:109:9-123
+127            android:name="com.labjournal.androidlab.StoreWelcomeActivity"
+127-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:109:19-55
+128            android:label="Store"
+128-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:109:56-77
+129            android:parentActivityName="com.labjournal.androidlab.MainActivity" />
+129-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:109:78-120
+130        <activity
+130-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:110:9-131
+131            android:name="com.labjournal.androidlab.StoreHubActivity"
+131-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:110:19-51
+132            android:label="Store Hub"
+132-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:110:52-77
+133            android:parentActivityName="com.labjournal.androidlab.StoreWelcomeActivity" />
+133-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:110:78-128
+134        <activity
+134-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:111:9-124
+135            android:name="com.labjournal.androidlab.CatalogActivity"
+135-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:111:19-50
+136            android:label="Catalog"
+136-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:111:51-74
+137            android:parentActivityName="com.labjournal.androidlab.StoreHubActivity" />
+137-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:111:75-121
+138        <activity
+138-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:112:9-136
+139            android:name="com.labjournal.androidlab.ProductDetailActivity"
+139-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:112:19-56
+140            android:label="Product Detail"
+140-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:112:57-87
+141            android:parentActivityName="com.labjournal.androidlab.CatalogActivity" />
+141-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:112:88-133
+142        <activity
+142-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:113:9-128
+143            android:name="com.labjournal.androidlab.FavoritesActivity"
+143-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:113:19-52
+144            android:label="Favorites"
+144-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:113:53-78
+145            android:parentActivityName="com.labjournal.androidlab.StoreHubActivity" />
+145-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:113:79-125
+146        <activity
+146-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:114:9-127
+147            android:name="com.labjournal.androidlab.CartActivity"
+147-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:114:19-47
+148            android:label="Shopping Cart"
+148-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:114:48-77
+149            android:parentActivityName="com.labjournal.androidlab.StoreHubActivity" />
+149-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:114:78-124
+150        <activity
+150-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:115:9-122
+151            android:name="com.labjournal.androidlab.CheckoutActivity"
+151-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:115:19-51
+152            android:label="Checkout"
+152-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:115:52-76
+153            android:parentActivityName="com.labjournal.androidlab.CartActivity" />
+153-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:115:77-119
+154        <activity
+154-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:116:9-137
+155            android:name="com.labjournal.androidlab.OrderTrackingActivity"
+155-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:116:19-56
+156            android:label="Order Tracking"
+156-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:116:57-87
+157            android:parentActivityName="com.labjournal.androidlab.StoreHubActivity" />
+157-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:116:88-134
+158        <activity
+158-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:117:9-135
+159            android:name="com.labjournal.androidlab.OrderHistoryActivity"
+159-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:117:19-55
+160            android:label="Order History"
+160-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:117:56-85
+161            android:parentActivityName="com.labjournal.androidlab.StoreHubActivity" />
+161-->F:\unitool\AndroidLabJournal - Copy\app\src\main\AndroidManifest.xml:117:86-132
+162
+163        <provider
+163-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+164            android:name="androidx.startup.InitializationProvider"
+164-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+165            android:authorities="com.labjournal.androidlab.androidx-startup"
+165-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+166            android:exported="false" >
+166-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+167            <meta-data
+167-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+168                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+168-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+169                android:value="androidx.startup" />
+169-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Pariv\.gradle\caches\transforms-3\33b86a1459d939fb864d200f62747636\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+170            <meta-data
+170-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Pariv\.gradle\caches\transforms-3\5e4a8e0fcb3481a0b16e243c758545e5\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+171                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+171-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Pariv\.gradle\caches\transforms-3\5e4a8e0fcb3481a0b16e243c758545e5\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+172                android:value="androidx.startup" />
+172-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Pariv\.gradle\caches\transforms-3\5e4a8e0fcb3481a0b16e243c758545e5\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+173            <meta-data
+173-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+174                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+174-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+175                android:value="androidx.startup" />
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+176        </provider>
+177
+178        <receiver
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+179            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+180            android:directBootAware="false"
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+181            android:enabled="true"
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+182            android:exported="true"
+182-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+183            android:permission="android.permission.DUMP" >
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+184            <intent-filter>
+184-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+185                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+186            </intent-filter>
+187            <intent-filter>
+187-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+188                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+189            </intent-filter>
+190            <intent-filter>
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+191                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+192            </intent-filter>
+193            <intent-filter>
+193-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+194                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Pariv\.gradle\caches\transforms-3\2dac5e1d7d37ad2248dc44303c98de0d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+195            </intent-filter>
+196        </receiver>
+197    </application>
+198
+199</manifest>

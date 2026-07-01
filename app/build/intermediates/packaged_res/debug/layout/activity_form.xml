@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    activity_form.xml — Registration Form Screen (Exercise 8)
+    ============================================================================
+    This layout demonstrates a comprehensive form using various Android input
+    widgets. It is wrapped in a ScrollView so the form remains scrollable on
+    smaller screens.
+
+    Key widgets used:
+      • TextInputLayout + TextInputEditText  (Material Design text fields)
+      • RadioGroup + RadioButton             (single-choice selection)
+      • CheckBox                             (multi-choice selection)
+      • Spinner                              (dropdown selection)
+      • SeekBar                              (slider / rating)
+      • Multiline EditText                   (free-form text area)
+      • MaterialButton                       (styled action buttons)
+
+    Package: com.labjournal.androidlab
+    ============================================================================
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".FormActivity">
+
+    <!-- ================================================================== -->
+    <!-- TOOLBAR — Top app bar with title                                   -->
+    <!-- ================================================================== -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_form"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Registration Form"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@android:color/white" />
+
+    <!-- ================================================================== -->
+    <!-- SCROLLVIEW — Wraps the entire form so it scrolls on small screens  -->
+    <!-- ================================================================== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Main form container — vertical LinearLayout with 16dp padding -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Form Title                                        -->
+            <!-- ========================================================== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registration Form"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Subtitle / instructions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please fill in all the fields below to complete your registration."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ========================================================== -->
+            <!-- FIELD 1: Full Name                                         -->
+            <!-- TextInputLayout provides a floating label and error state.  -->
+            <!-- inputType="textPersonName" optimises the keyboard for names.-->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                app:startIconDrawable="@drawable/ic_person"
+                app:errorEnabled="true"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- FIELD 2: Email Address                                     -->
+            <!-- inputType="textEmailAddress" shows the @ key on keyboard.  -->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                app:startIconDrawable="@drawable/ic_email"
+                app:errorEnabled="true"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- FIELD 3: Phone Number                                      -->
+            <!-- inputType="phone" shows the numeric dialer keyboard.       -->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:errorEnabled="true"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- FIELD 4: Password                                          -->
+            <!-- inputType="textPassword" masks the characters.             -->
+            <!-- app:endIconMode="password_toggle" adds a visibility toggle.-->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- FIELD 5: Date of Birth                                     -->
+            <!-- focusable="false" prevents keyboard from appearing;        -->
+            <!-- a DatePickerDialog will be shown on click instead.          -->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_dob"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth"
+                app:startIconDrawable="@drawable/ic_calendar"
+                app:errorEnabled="true"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Gender Selection (RadioGroup)                     -->
+            <!-- RadioGroup ensures only one RadioButton can be selected    -->
+            <!-- at a time — ideal for single-choice questions.             -->
+            <!-- ========================================================== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Male option -->
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male" />
+
+                <!-- Female option -->
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female" />
+
+                <!-- Other option -->
+                <RadioButton
+                    android:id="@+id/rb_other"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Other" />
+            </RadioGroup>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Hobbies (CheckBoxes)                              -->
+            <!-- CheckBoxes allow multiple selections — ideal for           -->
+            <!-- multi-choice questions like hobbies.                       -->
+            <!-- ========================================================== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hobbies:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Row 1 of hobbies: Reading and Sports -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_reading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reading" />
+
+                <CheckBox
+                    android:id="@+id/cb_sports"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sports" />
+            </LinearLayout>
+
+            <!-- Row 2 of hobbies: Music and Coding -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <CheckBox
+                    android:id="@+id/cb_music"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Music" />
+
+                <CheckBox
+                    android:id="@+id/cb_coding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Coding" />
+            </LinearLayout>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Course Selection (Spinner / Dropdown)             -->
+            <!-- Spinner provides a dropdown list for single-item selection.-->
+            <!-- The items are populated programmatically via an Adapter.   -->
+            <!-- ========================================================== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Course:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/spinner_course"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/spinner_background"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Rating (SeekBar / Slider)                         -->
+            <!-- SeekBar lets the user pick a value on a continuous scale.   -->
+            <!-- The current value is displayed in the label next to it.    -->
+            <!-- ========================================================== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rating:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- SeekBar for rating (0–10 scale) -->
+                <SeekBar
+                    android:id="@+id/seekbar_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="10"
+                    android:progress="5" />
+
+                <!-- Label that shows the current seekbar value -->
+                <TextView
+                    android:id="@+id/tv_seekbar_value"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="5/10"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- ========================================================== -->
+            <!-- FIELD 6: Address (Multiline EditText)                      -->
+            <!-- inputType="textMultiLine" allows the user to type across   -->
+            <!-- multiple lines — ideal for addresses, comments, etc.       -->
+            <!-- ========================================================== -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_address"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                app:errorEnabled="true"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:gravity="top|start" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: Action Buttons (Submit & Reset)                   -->
+            <!-- Placed in a horizontal LinearLayout with equal weight so   -->
+            <!-- they share the available width equally.                    -->
+            <!-- ========================================================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+
+                <!-- Submit button — triggers validation and displays data -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Submit"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"
+                    app:cornerRadius="8dp" />
+
+                <!-- Reset button — clears all form fields -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_reset"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reset"
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/colorPrimary" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- End of form container -->
+
+    </ScrollView>
+    <!-- End of ScrollView -->
+
+</LinearLayout>

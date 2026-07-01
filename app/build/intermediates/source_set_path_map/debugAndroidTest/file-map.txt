@@ -1,0 +1,4 @@
+com.labjournal.androidlab.test.app-androidTest-0 C:\Users\paris\.gemini\antigravity\scratch\AndroidLabJournal\app\build\generated\res\resValues\androidTest\debug
+com.labjournal.androidlab.test.app-mergeDebugAndroidTestResources-1 C:\Users\paris\.gemini\antigravity\scratch\AndroidLabJournal\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.labjournal.androidlab.test.app-mergeDebugAndroidTestResources-2 C:\Users\paris\.gemini\antigravity\scratch\AndroidLabJournal\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.labjournal.androidlab.test.app-merged_res-3 C:\Users\paris\.gemini\antigravity\scratch\AndroidLabJournal\app\build\intermediates\merged_res\debugAndroidTest

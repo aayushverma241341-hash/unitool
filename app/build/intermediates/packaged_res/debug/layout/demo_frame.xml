@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    demo_frame.xml — FrameLayout Demonstration
+    ============================================================================
+    FrameLayout is designed to hold a SINGLE child view, but it CAN hold
+    multiple children.  When it does, children are stacked on top of each
+    other in the order they appear in the XML (later children draw on top).
+
+    Key concepts demonstrated:
+      • Z-ordering          — later children appear in front of earlier ones
+      • android:alpha       — transparency (0.0 = invisible, 1.0 = opaque)
+      • layout_gravity      — positions the child within the FrameLayout
+                               (center, top|start, bottom|end, etc.)
+      • Overlapping views   — views can partially or fully overlap
+
+    FrameLayout is ideal for:
+      • Hosting Fragments
+      • Overlaying badges or labels on images
+      • Simple stacking scenarios
+    ============================================================================
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- ── Title (drawn first, but at the top edge) ──────────────────── -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FrameLayout Demo — Stacked / Overlapping Views"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#E65100"
+        android:gravity="center"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ================================================================ -->
+    <!-- LAYER 1 (Bottom-most): Large background box                     -->
+    <!-- This is drawn first, so it sits at the bottom of the stack.     -->
+    <!-- ================================================================ -->
+    <View
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:background="#BBDEFB"
+        android:alpha="0.7" />
+
+    <!-- Label for Layer 1 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layer 1 (280dp, blue, alpha=0.7)"
+        android:textSize="10sp"
+        android:textColor="#1565C0"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp" />
+
+    <!-- ================================================================ -->
+    <!-- LAYER 2: Medium box, drawn on top of Layer 1                    -->
+    <!-- Semi-transparent green — you can see Layer 1 through it         -->
+    <!-- ================================================================ -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="#C8E6C9"
+        android:alpha="0.8" />
+
+    <!-- Label for Layer 2 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layer 2 (200dp, green, alpha=0.8)"
+        android:textSize="10sp"
+        android:textColor="#2E7D32"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="110dp" />
+
+    <!-- ================================================================ -->
+    <!-- LAYER 3: Small box, drawn on top of Layer 2                     -->
+    <!-- More opaque — the orange box is clearly visible                  -->
+    <!-- ================================================================ -->
+    <View
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="#FFE0B2"
+        android:alpha="0.9" />
+
+    <!-- Label for Layer 3 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layer 3\n(120dp, orange)"
+        android:textSize="10sp"
+        android:textColor="#E65100"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center" />
+
+    <!-- ================================================================ -->
+    <!-- CORNER BADGES — Small views pinned to different corners          -->
+    <!-- Demonstrates layout_gravity for positioning within FrameLayout  -->
+    <!-- ================================================================ -->
+
+    <!-- Top-Start badge -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="36dp"
+        android:background="#F8BBD0"
+        android:padding="8dp"
+        android:text="top|start"
+        android:textColor="#AD1457"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- Top-End badge -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="36dp"
+        android:background="#D1C4E9"
+        android:padding="8dp"
+        android:text="top|end"
+        android:textColor="#4527A0"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- Bottom-Start badge -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:background="#B2EBF2"
+        android:padding="8dp"
+        android:text="bottom|start"
+        android:textColor="#00838F"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- Bottom-End badge -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:background="#DCEDC8"
+        android:padding="8dp"
+        android:text="bottom|end"
+        android:textColor="#558B2F"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <!-- ================================================================ -->
+    <!-- OVERLAY LABEL — The top-most layer in the stack                  -->
+    <!-- Appears in front of everything because it is last in the XML    -->
+    <!-- ================================================================ -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:background="#FFCDD2"
+        android:padding="10dp"
+        android:text="★ Top-most overlay (last in XML = front) ★"
+        android:textColor="#C62828"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

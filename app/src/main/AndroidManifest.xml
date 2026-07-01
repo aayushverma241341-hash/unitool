@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidLabJournal">
+
+        <!-- Exercise 6: Main Dashboard / Home Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Exercise 6: Hello World Activity -->
+        <activity
+            android:name=".HelloWorldActivity"
+            android:label="Hello World"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 5: Lifecycle Demo Activity -->
+        <activity
+            android:name=".LifecycleActivity"
+            android:label="Lifecycle Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 7: Linear Layout with Image and Buttons -->
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:label="Linear Layout Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 8: Form with Input Fields -->
+        <activity
+            android:name=".FormActivity"
+            android:label="Form Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 9: Different Layouts Demo -->
+        <activity
+            android:name=".LayoutDemoActivity"
+            android:label="Layout Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 10: Simple Calculator -->
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="Calculator"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 11: Toggle Button -->
+        <activity
+            android:name=".ToggleButtonActivity"
+            android:label="Toggle Button Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 12: Database Storage -->
+        <activity
+            android:name=".DatabaseActivity"
+            android:label="Database Demo"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Exercise 13: Udemy Registration Form -->
+        <activity
+            android:name=".UdemyRegActivity"
+            android:label="Udemy Registration"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Basic Widget Demo -->
+        <activity
+            android:name=".BasicWidgetActivity"
+            android:label="Basic Widgets"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Internal Framework -->
+        <activity
+            android:name=".InternalFrameworkActivity"
+            android:label="Internal Framework"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Final Projects -->
+        <activity
+            android:name=".TaskManagerActivity"
+            android:label="Task Manager"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".GpaTrackerActivity"
+            android:label="GPA Tracker"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ContactBookActivity"
+            android:label="Contact Book"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ScientificCalculatorActivity"
+            android:label="Scientific Calculator"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- E-Commerce Modules -->
+        <activity android:name=".StoreWelcomeActivity" android:label="Store" android:parentActivityName=".MainActivity" />
+        <activity android:name=".StoreHubActivity" android:label="Store Hub" android:parentActivityName=".StoreWelcomeActivity" />
+        <activity android:name=".CatalogActivity" android:label="Catalog" android:parentActivityName=".StoreHubActivity" />
+        <activity android:name=".ProductDetailActivity" android:label="Product Detail" android:parentActivityName=".CatalogActivity" />
+        <activity android:name=".FavoritesActivity" android:label="Favorites" android:parentActivityName=".StoreHubActivity" />
+        <activity android:name=".CartActivity" android:label="Shopping Cart" android:parentActivityName=".StoreHubActivity" />
+        <activity android:name=".CheckoutActivity" android:label="Checkout" android:parentActivityName=".CartActivity" />
+        <activity android:name=".OrderTrackingActivity" android:label="Order Tracking" android:parentActivityName=".StoreHubActivity" />
+        <activity android:name=".OrderHistoryActivity" android:label="Order History" android:parentActivityName=".StoreHubActivity" />
+
+    </application>
+</manifest>

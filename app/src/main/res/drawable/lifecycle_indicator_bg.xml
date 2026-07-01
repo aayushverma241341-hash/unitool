@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    lifecycle_indicator_bg.xml
+    ==========================
+    A simple circular shape drawable used as the lifecycle stage indicator.
+    By default it is grey (#BDBDBD). The LifecycleActivity changes its
+    tint to green (#4CAF50) when the corresponding lifecycle method fires.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Solid fill colour (overridden by backgroundTint at runtime) -->
+    <solid android:color="#BDBDBD" />
+
+    <!-- Fixed 18dp × 18dp size to match the layout dimensions -->
+    <size
+        android:width="18dp"
+        android:height="18dp" />
+
+</shape>

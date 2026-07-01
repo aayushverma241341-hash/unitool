@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:title="Live Tracking"
+        app:titleTextColor="#333333"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_tracking_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📝"
+            android:textSize="100sp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/tv_tracking_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Received"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+            
+        <TextView
+            android:id="@+id/tv_tracking_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We have received your order."
+            android:textSize="16sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="32dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_tracking"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="3"
+            android:progress="0"
+            android:scaleY="2"
+            android:progressTint="@color/card_food" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Received"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:gravity="start"/>
+                
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Preparing"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:gravity="center"/>
+                
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="On Way"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:gravity="center"/>
+                
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Delivered"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:gravity="end"/>
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/btn_back_to_hub"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="48dp"
+            android:text="Back to Dashboard"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#333333" />
+
+    </LinearLayout>
+
+</LinearLayout>

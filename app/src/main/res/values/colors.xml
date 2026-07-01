@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="colorPrimary">#FF6750A4</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="colorAccent">#FF03DAC5</color>
+    <color name="purple_500">#FF6750A4</color>
+    <color name="purple_700">#FF4A3880</color>
+    <color name="purple_200">#FFCFBCFF</color>
+
+    <!-- Secondary Colors -->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="grey_50">#FFF8F8F8</color>
+    <color name="grey_100">#FFF0F0F0</color>
+    <color name="grey_200">#FFE0E0E0</color>
+    <color name="grey_500">#FF9E9E9E</color>
+    <color name="grey_700">#FF616161</color>
+    <color name="grey_900">#FF212121</color>
+
+    <!-- Card / Dashboard Colors -->
+    <color name="card_hello">#FF4CAF50</color>
+    <color name="card_lifecycle">#FF2196F3</color>
+    <color name="card_linear">#FFFF9800</color>
+    <color name="card_form">#FFE91E63</color>
+    <color name="card_layout">#FF9C27B0</color>
+    <color name="card_calculator">#FF00BCD4</color>
+    <color name="card_toggle">#FFFF5722</color>
+    <color name="card_database">#FF607D8B</color>
+    <color name="card_udemy">#FF8E24AA</color>
+    <color name="card_basic_widget">#FF795548</color>
+    <color name="card_framework">#FF3F51B5</color>
+    
+    <!-- Final Project Module Colors -->
+    <color name="card_tasks">#FF009688</color>       <!-- Teal -->
+    <color name="card_gpa">#FF673AB7</color>         <!-- Deep Purple -->
+    <color name="card_contacts">#FF00BCD4</color>    <!-- Cyan -->
+    <color name="card_scicalc">#FFE91E63</color>     <!-- Pink -->
+    
+    <!-- E-Commerce Colors -->
+    <color name="card_food">#FFFF5722</color>        <!-- Deep Orange -->
+    <color name="card_grocery">#FF4CAF50</color>     <!-- Green -->
+
+    <!-- Calculator Button Colors -->
+    <color name="calc_number">#FF2C2C2C</color>
+    <color name="calc_operator">#FFFF9500</color>
+    <color name="calc_equals">#FF4CAF50</color>
+    <color name="calc_clear">#FFFF3B30</color>
+    <color name="calc_display_bg">#FF1C1C1E</color>
+    <color name="calc_display_text">#FFFFFFFF</color>
+
+    <!-- Toggle Colors -->
+    <color name="toggle_on">#FF4CAF50</color>
+    <color name="toggle_off">#FFFF5252</color>
+
+    <!-- Status Bar -->
+    <color name="status_bar">#FF3700B3</color>
+</resources>

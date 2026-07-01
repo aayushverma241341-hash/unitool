@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_calculator.xml
+    Exercise 10 – Calculator Screen
+
+    A modern, dark-themed calculator UI inspired by the iOS / stock Android
+    calculator.  The layout is split into two sections:
+
+    1.  DISPLAY AREA  –  Shows the running expression (tv_expression) and
+        the current number or result (tv_result).  A dark background and
+        generous padding give it a clean, spacious feel.
+
+    2.  BUTTON GRID   –  A 4-column GridLayout holding the digit keys,
+        operator keys, and utility keys (C, ±, %, .).  Row / column
+        weights distribute space evenly so the buttons stay uniform on
+        every screen size.
+
+    Button styling is delegated to three drawable backgrounds:
+        • @drawable/calc_button_bg   – number / decimal keys
+        • @drawable/calc_operator_bg – operator & equals keys
+        • @drawable/calc_special_bg  – C, ±, % keys
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF000000"
+    tools:context=".CalculatorActivity">
+
+    <!-- ===================== TOOLBAR ===================== -->
+    <!-- Standard Material Toolbar with a back arrow and title.            -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/calc_display_bg"
+        android:elevation="0dp"
+        app:title="Calculator"
+        app:titleTextColor="#FFFFFFFF"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- ================== DISPLAY AREA =================== -->
+    <!-- Weighted (3) so it stretches to fill whatever space the button    -->
+    <!-- grid doesn't use.  Contains the small expression line and the     -->
+    <!-- large result line, both right-aligned.                            -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:gravity="bottom|end"
+        android:background="@color/calc_display_bg"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <!-- Expression / history line (e.g. "42 +") -->
+        <TextView
+            android:id="@+id/tv_expression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#AAAAAA"
+            android:gravity="end"
+            android:maxLines="1"
+            android:ellipsize="start"
+            android:fontFamily="sans-serif-light"
+            tools:text="42 +" />
+
+        <!-- Current number / result (large, bold) -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="48sp"
+            android:textColor="#FFFFFFFF"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="48sp"
+            android:autoSizeStepGranularity="2sp"
+            android:fontFamily="sans-serif-light"
+            android:text="0"
+            tools:text="0" />
+
+    </LinearLayout>
+
+    <!-- ================== BUTTON GRID ==================== -->
+    <!-- 4 columns × 5 rows.  Each button uses column/row weights so      -->
+    <!-- they share space equally.  The "0" key spans two columns.         -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:background="#FF1C1C1E"
+        android:padding="4dp"
+        android:useDefaultMargins="false"
+        android:alignmentMode="alignBounds">
+
+        <!-- ============== ROW 1: C  ±  %  ÷ ============== -->
+
+        <!-- C – Clear button (special style) -->
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_special_bg"
+            android:text="C"
+            android:textColor="#FF000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ± – Plus / minus toggle (special style) -->
+        <Button
+            android:id="@+id/btn_plusminus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_special_bg"
+            android:text="±"
+            android:textColor="#FF000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- % – Percent (special style) -->
+        <Button
+            android:id="@+id/btn_percent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_special_bg"
+            android:text="%"
+            android:textColor="#FF000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ÷ – Divide (operator style) -->
+        <Button
+            android:id="@+id/btn_divide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_operator_bg"
+            android:text="÷"
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ============== ROW 2: 7  8  9  × ============== -->
+
+        <Button
+            android:id="@+id/btn_7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="7"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="8"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="9"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <!-- × – Multiply (operator style) -->
+        <Button
+            android:id="@+id/btn_multiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_operator_bg"
+            android:text="×"
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ============== ROW 3: 4  5  6  − ============== -->
+
+        <Button
+            android:id="@+id/btn_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="4"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="5"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="6"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <!-- − – Subtract (operator style) -->
+        <Button
+            android:id="@+id/btn_subtract"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_operator_bg"
+            android:text="−"
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ============== ROW 4: 1  2  3  + ============== -->
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="1"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="2"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="3"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <!-- + – Add (operator style) -->
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_operator_bg"
+            android:text="+"
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+        <!-- ============ ROW 5: 0(×2)  .  = ============== -->
+
+        <!-- 0 – spans TWO columns -->
+        <Button
+            android:id="@+id/btn_0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="0"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:stateListAnimator="@null" />
+
+        <!-- . – Decimal point (number style) -->
+        <Button
+            android:id="@+id/btn_decimal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_button_bg"
+            android:text="."
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:stateListAnimator="@null" />
+
+        <!-- = – Equals (operator style) -->
+        <Button
+            android:id="@+id/btn_equals"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            android:background="@drawable/calc_operator_bg"
+            android:text="="
+            android:textColor="#FFFFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+    </GridLayout>
+
+</LinearLayout>

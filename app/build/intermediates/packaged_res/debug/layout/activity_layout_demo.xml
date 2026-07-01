@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    activity_layout_demo.xml — Layout Types Demo Screen (Exercise 9)
+    ============================================================================
+    This screen lets the user switch between four fundamental Android layout
+    types to see how each one positions child views differently.
+
+    Structure:
+      1. Toolbar           — top app bar with back navigation
+      2. Button Row         — four equally-weighted buttons to pick a layout type
+      3. FrameLayout        — container where demo layouts are inflated at runtime
+      4. Info TextView      — explains the currently displayed layout type
+
+    Package: com.labjournal.androidlab
+    ============================================================================
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".LayoutDemoActivity">
+
+    <!-- ================================================================== -->
+    <!-- TOOLBAR — Top app bar with title and back arrow                    -->
+    <!-- ================================================================== -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_layout_demo"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Layout Types Demo"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@android:color/white" />
+
+    <!-- ================================================================== -->
+    <!-- BUTTON ROW — Four equally-spaced buttons to select a layout demo   -->
+    <!-- Each button uses layout_weight="1" for equal distribution.         -->
+    <!-- ================================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#F5F5F5">
+
+        <!-- Button 1: Linear Layout demo -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_linear_demo"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Linear"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp" />
+
+        <!-- Button 2: Relative Layout demo -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_relative_demo"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Relative"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp" />
+
+        <!-- Button 3: Table Layout demo -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_table_demo"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Table"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp" />
+
+        <!-- Button 4: Frame Layout demo -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_frame_demo"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Frame"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- Thin divider line under the button row -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
+
+    <!-- ================================================================== -->
+    <!-- LAYOUT CONTAINER — FrameLayout that hosts the inflated demos       -->
+    <!-- The demo layouts (demo_linear, demo_relative, etc.) are inflated   -->
+    <!-- into this container at runtime by LayoutDemoActivity.              -->
+    <!-- ================================================================== -->
+    <FrameLayout
+        android:id="@+id/layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <!-- ================================================================== -->
+    <!-- INFO TEXT — Explains the currently displayed layout type            -->
+    <!-- ================================================================== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="120dp">
+
+        <TextView
+            android:id="@+id/tv_layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#F0F4FF"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:lineSpacingMultiplier="1.3"
+            android:text="Select a layout type above to see a live demo and learn how it works." />
+    </ScrollView>
+
+</LinearLayout>

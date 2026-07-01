@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    demo_linear.xml — LinearLayout Demonstration
+    ============================================================================
+    LinearLayout arranges its children in a single row (horizontal) or a single
+    column (vertical).  This demo shows NESTED LinearLayouts to create a grid-
+    like structure using android:layout_weight for proportional sizing.
+
+    Key attributes demonstrated:
+      • android:orientation        — "vertical" or "horizontal"
+      • android:layout_weight      — proportional space allocation
+      • android:layout_width="0dp" — used with weight in horizontal layouts
+      • android:layout_height="0dp"— used with weight in vertical layouts
+    ============================================================================
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Title label for the demo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LinearLayout Demo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1565C0"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- ── Row 1: Full-width box ──────────────────────────────────────── -->
+    <!-- Demonstrates a single child spanning the full width -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E3F2FD"
+        android:gravity="center"
+        android:text="Full Width (weight=1)"
+        android:textColor="#1565C0"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- ── Row 2: Two equal boxes side by side ────────────────────────── -->
+    <!-- Demonstrates horizontal orientation with equal weights -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#C8E6C9"
+            android:gravity="center"
+            android:text="Left\n(weight=1)"
+            android:textColor="#2E7D32"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFF9C4"
+            android:gravity="center"
+            android:text="Right\n(weight=1)"
+            android:textColor="#F9A825"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ── Row 3: Three boxes with different weights ──────────────────── -->
+    <!-- Demonstrates unequal weight distribution (1:2:1) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFCCBC"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#D84315"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#F8BBD0"
+            android:gravity="center"
+            android:text="Weight = 2\n(takes 2x space)"
+            android:textColor="#AD1457"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#D1C4E9"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#4527A0"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ── Row 4: Nested vertical inside horizontal ───────────────────── -->
+    <!-- Demonstrates nesting: a vertical LinearLayout inside a horizontal one -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <!-- Left: single tall box -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B2EBF2"
+            android:gravity="center"
+            android:text="Tall\nBox"
+            android:textColor="#00838F"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <!-- Right: vertically stacked boxes -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#DCEDC8"
+                android:gravity="center"
+                android:text="Top"
+                android:textColor="#558B2F"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFE0B2"
+                android:gravity="center"
+                android:text="Bottom"
+                android:textColor="#E65100"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
